@@ -1,26 +1,46 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './app.css';
+import NavBar from './navigation.js';
+import Home from './home.js';
+import About from './about.js'
+import Products2 from './products2.js';
+import Contact from './contact.js';
+import {
+	GoogleMap,
+	useLoadScript,
+	Marker,
+	InfoWindow
+} from '@react-google-maps/api'
+/*
+const mapStyles = {
+	height: "400px",
+	width: "400px",
+}
+
+const center = {
+	lat: 43.653225,
+	lng: -79.383186,
+}*/
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+	/*const {isLoaded, loadError} = useLoadScript({
+		googleMapsApiKey: process.env.REACT_APP_MAP_API
+	})
+
+	if (loadError) return "Error loading Maps"
+	if (!isLoaded) return "Loading Maps"*/
+
+	return (
+		<>
+		  <div className="container">
+				<NavBar />
+				<Home />
+		    <About />
+				<Products2 />
+				<Contact />
+		  </div>
+		</>
   );
 }
 
-export default App;
+export default App
